@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['update']))
 {
@@ -37,27 +37,21 @@ echo "<script>window.location.href='manage-books.php'</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Edit Book</title>
-    <!-- BOOTSTRAP CORE STYLE  -->
+    <title>BookStop | Edit Book</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
 </head>
 <body>
-      <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
-<!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Add Book</h4>
-                
+
                             </div>
 
 </div>
@@ -69,7 +63,7 @@ Book Info
 </div>
 <div class="panel-body">
 <form role="form" method="post">
-<?php 
+<?php
 $bookid=intval($_GET['bookid']);
 $sql = "SELECT tblbooks.BookName,tblcategory.CategoryName,tblcategory.id as cid,tblauthors.AuthorName,tblauthors.id as athrid,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid,tblbooks.bookImage from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId where tblbooks.id=:bookid";
 $query = $dbh -> prepare($sql);
@@ -80,7 +74,7 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>  
+{               ?>
 
 <div class="col-md-6">
 <div class="form-group">
@@ -100,7 +94,7 @@ foreach($results as $result)
 <label> Category<span style="color:red;">*</span></label>
 <select class="form-control" name="category" required="required">
 <option value="<?php echo htmlentities($result->cid);?>"> <?php echo htmlentities($catname=$result->CategoryName);?></option>
-<?php 
+<?php
 $status=1;
 $sql1 = "SELECT * from  tblcategory where Status=:status";
 $query1 = $dbh -> prepare($sql1);
@@ -110,16 +104,16 @@ $resultss=$query1->fetchAll(PDO::FETCH_OBJ);
 if($query1->rowCount() > 0)
 {
 foreach($resultss as $row)
-{           
+{
 if($catname==$row->CategoryName)
 {
 continue;
 }
 else
 {
-    ?>  
+    ?>
 <option value="<?php echo htmlentities($row->id);?>"><?php echo htmlentities($row->CategoryName);?></option>
- <?php }}} ?> 
+ <?php }}} ?>
 </select>
 </div></div>
 
@@ -128,7 +122,7 @@ else
 <label> Author<span style="color:red;">*</span></label>
 <select class="form-control" name="author" required="required">
 <option value="<?php echo htmlentities($result->athrid);?>"> <?php echo htmlentities($athrname=$result->AuthorName);?></option>
-<?php 
+<?php
 
 $sql2 = "SELECT * from  tblauthors ";
 $query2 = $dbh -> prepare($sql2);
@@ -137,15 +131,15 @@ $result2=$query2->fetchAll(PDO::FETCH_OBJ);
 if($query2->rowCount() > 0)
 {
 foreach($result2 as $ret)
-{           
+{
 if($athrname==$ret->AuthorName)
 {
 continue;
 } else{
 
-    ?>  
+    ?>
 <option value="<?php echo htmlentities($ret->id);?>"><?php echo htmlentities($ret->AuthorName);?></option>
- <?php }}} ?> 
+ <?php }}} ?>
 </select>
 </div></div>
 
@@ -172,18 +166,12 @@ continue;
                             </div>
 
         </div>
-   
+
     </div>
     </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php');?>
-      <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
     <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
-      <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
 </body>
 </html>

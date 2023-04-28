@@ -1,4 +1,3 @@
-/* Set the defaults for DataTables initialisation */
 $.extend(true, $.fn.dataTable.defaults, {
     "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",
     "oLanguage": {
@@ -6,16 +5,12 @@ $.extend(true, $.fn.dataTable.defaults, {
     }
 });
 
-
-/* Default class modification */
 $.extend($.fn.dataTableExt.oStdClasses, {
     "sWrapper": "dataTables_wrapper form-inline",
     "sFilterInput": "form-control input-sm",
     "sLengthSelect": "form-control input-sm"
 });
 
-// In 1.10 we use the pagination renderers to draw the Bootstrap paging,
-// rather than  custom plug-in
 if ($.fn.dataTable.Api) {
     $.fn.dataTable.defaults.renderer = 'bootstrap';
     $.fn.dataTable.ext.renderer.pageButton.bootstrap = function(settings, host, idx, buttons, page, pages) {
@@ -109,10 +104,8 @@ if ($.fn.dataTable.Api) {
         );
     }
 } else {
-    // Integration for 1.9-
     $.fn.dataTable.defaults.sPaginationType = 'bootstrap';
 
-    /* API method to get paging information */
     $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings) {
         return {
             "iStart": oSettings._iDisplayStart,
@@ -125,7 +118,6 @@ if ($.fn.dataTable.Api) {
         };
     };
 
-    /* Bootstrap style pagination control */
     $.extend($.fn.dataTableExt.oPagination, {
         "bootstrap": {
             "fnInit": function(oSettings, nPaging, fnDraw) {
@@ -188,7 +180,6 @@ if ($.fn.dataTable.Api) {
                             });
                     }
 
-                    // Add / remove disabled classes from the static elements
                     if (oPaging.iPage === 0) {
                         $('li:first', an[i]).addClass('disabled');
                     } else {
@@ -206,13 +197,7 @@ if ($.fn.dataTable.Api) {
     });
 }
 
-
-/*
- * TableTools Bootstrap compatibility
- * Required TableTools 2.1+
- */
 if ($.fn.DataTable.TableTools) {
-    // Set the classes that TableTools uses to something suitable for Bootstrap
     $.extend(true, $.fn.DataTable.TableTools.classes, {
         "container": "DTTT btn-group",
         "buttons": {
@@ -234,7 +219,6 @@ if ($.fn.DataTable.TableTools) {
         }
     });
 
-    // Have the collection use a bootstrap compatible dropdown
     $.extend(true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {
         "collection": {
             "container": "ul",

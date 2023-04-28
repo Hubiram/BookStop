@@ -3,10 +3,10 @@ session_start();
 include('includes/config.php');
 error_reporting(0);
 if(strlen($_SESSION['login'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 if(isset($_POST['change']))
   {
 $password=md5($_POST['password']);
@@ -28,7 +28,7 @@ $chngpwd1->execute();
 $msg="Your Password succesfully changed";
 }
 else {
-$error="Your current password is wrong";  
+$error="Your current password is wrong";
 }
 }
 
@@ -41,13 +41,9 @@ $error="Your current password is wrong";
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Online Library Management System | </title>
-    <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <style>
     .errorWrap {
@@ -82,9 +78,7 @@ return true;
 </script>
 
 <body>
-    <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
-<!-- MENU SECTION END-->
 <div class="content-wrapper">
 <div class="container">
 <div class="row pad-botm">
@@ -92,9 +86,8 @@ return true;
 <h4 class="header-line">User Change Password</h4>
 </div>
 </div>
- <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>            
-<!--LOGIN PANEL START-->           
+ <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
+        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" >
 <div class="panel panel-info">
@@ -119,24 +112,19 @@ Change Password
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
 
- <button type="submit" name="change" class="btn btn-info">Chnage </button> 
+ <button type="submit" name="change" class="btn btn-info">Chnage </button>
 </form>
  </div>
 </div>
 </div>
-</div>  
-<!---LOGIN PABNEL END-->            
-             
- 
+</div>
+
+
     </div>
     </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
  <?php include('includes/footer.php');?>
-      <!-- FOOTER SECTION END-->
     <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
-      <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
 </body>
 </html>

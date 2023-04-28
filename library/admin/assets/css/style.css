@@ -1,25 +1,8 @@
 ﻿
-/*=============================================================
-    Authour URI: www.binarytheme.com
-    License: Commons Attribution 3.0
-
-    http://creativecommons.org/licenses/by/3.0/
-
-    100% Free To use For Personal And Commercial Use.
-    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
-    ========================================================  */
-
-
-
-/* =============================================================
-   GENERAL STYLES
- ============================================================ */
-
 body {
     font-family: 'Open Sans', sans-serif;
     line-height:28px;
-   
+
 }
 .set-radius-zero {
     border-radius:0px;
@@ -41,13 +24,8 @@ body {
     padding-bottom:30px;
 }
 
-
-/* =============================================================
-   NAVBAR & MENU STYLES
- ============================================================ */
-
 .right-div {
-    float: right; 
+    float: right;
     padding: 20px;
 }
 #menu-top a {
@@ -60,7 +38,7 @@ body {
 }
 .menu-section {
     background-color: #f7f7f7;
-    border-bottom:5px solid #9170E4;
+    border-bottom:5px solid #000000;
     width:100%
 }
 .menu-top-active {
@@ -75,7 +53,7 @@ border-color: rgba(155, 153, 153, 0.23);
 .navbar {
     min-height: 90px;
     margin-bottom: 0px;
-   
+
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color:transparent;
@@ -84,10 +62,6 @@ border-color: rgba(155, 153, 153, 0.23);
 background-color: black;
 border: 1px solid black;
 }
-
-    /* =============================================================
-   DASHBOARD STYLES
- ============================================================ */
 
 .img-comments {
    border: 3px double #e1e1e1;
@@ -101,7 +75,7 @@ height: 60px;
 }
 
 .slide-bdr {
-   border:5px solid #9170E4
+   border:5px solid #000000
 }
 .chat-widget-left:after {
     top: 100%;
@@ -109,7 +83,7 @@ height: 60px;
     border: solid transparent;
     content: " ";
     position: absolute;
-    border-top-color: #F70E62;
+    border-top-color: #CDC9C9;
     border-width: 15px;
     margin-left: -15px;
 }
@@ -122,7 +96,7 @@ height: 60px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     position: relative;
-    border: 1px solid #F70E62;
+    border: 1px solid #CDC9C9;
     font-size:12px;
 }
 .chat-widget-right:after {
@@ -131,7 +105,7 @@ height: 60px;
     border: solid transparent;
     content: " ";
     position: absolute;
-    border-top-color: #5AA8CC;
+    border-top-color: #C1DC1;
     border-width: 15px;
     margin-left: -15px;
 }
@@ -144,7 +118,7 @@ height: 60px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     position: relative;
-    border: 1px solid #5AA8CC;
+    border: 1px solid #C1DC1;
     font-size:12px;
 }
 
@@ -172,7 +146,7 @@ height: 60px;
 .chat-widget-name-left h4 {
     font-weight:normal;
     font-size:11px;
-    
+
 }
 .chat-widget-name-left h5 {
     font-weight:normal;
@@ -202,20 +176,16 @@ height: 60px;
     background-color:transparent;
 }
 
-/* =============================================================
-   FOOTER SECTION STYLES
- ============================================================ */
 .footer-section {
     padding:25px 50px 25px 50px;
     color:#000;
     font-size:13px;
       background-color: #f7f7f7;
       text-align:right;
-       border-top:5px solid #9170E4;
+       border-top:5px solid #000000;
 
 }
 
     .footer-section a, .footer-section a:hover {
         color:#000;
     }
-

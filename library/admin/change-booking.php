@@ -18,17 +18,16 @@ $cpath="bookimg"."/".$cimage;
 $extension = substr($bookimg,strlen($bookimg)-4,strlen($bookimg));
 $allowed_extensions = array(".jpg","jpeg",".png",".gif");
 $imgnewname=md5($bookimg.time()).$extension;
-
+move_uploaded_file($_FILES["bookpic"]["tmp_name"],"bookimg/".$imgnewname);
 if(!in_array($extension,$allowed_extensions))
 {
 echo "<script>alert('Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
 }
 else
 {
-    move_uploaded_file($_FILES["bookpic"]["tmp_name"],"bookimg/".$imgnewname);
 $sql="update  tblbooks set bookImage=:imgnewname where id=:bookid";
 $query = $dbh->prepare($sql);
-$query->bindParam(':imgnewname',$imgnewname,PDO::PARAM_STR);
+$query->bindParam(':bookname',$bookname,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
 $query->execute();
 unlink($cpath);

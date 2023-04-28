@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
 else{
@@ -28,23 +28,16 @@ header('location:manage-authors.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Manage Authors</title>
-    <!-- BOOTSTRAP CORE STYLE  -->
+    <title>BookStop | Manage Authors</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- DATATABLE STYLE  -->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
 </head>
 <body>
-      <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
-<!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
@@ -56,7 +49,7 @@ header('location:manage-authors.php');
     {?>
 <div class="col-md-6">
 <div class="alert alert-danger" >
- <strong>Error :</strong> 
+ <strong>Error :</strong>
  <?php echo htmlentities($_SESSION['error']);?>
 <?php echo htmlentities($_SESSION['error']="");?>
 </div>
@@ -66,7 +59,7 @@ header('location:manage-authors.php');
 {?>
 <div class="col-md-6">
 <div class="alert alert-success" >
- <strong>Success :</strong> 
+ <strong>Success :</strong>
  <?php echo htmlentities($_SESSION['msg']);?>
 <?php echo htmlentities($_SESSION['msg']="");?>
 </div>
@@ -76,7 +69,7 @@ header('location:manage-authors.php');
 {?>
 <div class="col-md-6">
 <div class="alert alert-success" >
- <strong>Success :</strong> 
+ <strong>Success :</strong>
  <?php echo htmlentities($_SESSION['updatemsg']);?>
 <?php echo htmlentities($_SESSION['updatemsg']="");?>
 </div>
@@ -88,7 +81,7 @@ header('location:manage-authors.php');
     {?>
 <div class="col-md-6">
 <div class="alert alert-success" >
- <strong>Success :</strong> 
+ <strong>Success :</strong>
  <?php echo htmlentities($_SESSION['delmsg']);?>
 <?php echo htmlentities($_SESSION['delmsg']="");?>
 </div>
@@ -101,7 +94,6 @@ header('location:manage-authors.php');
         </div>
             <div class="row">
                 <div class="col-md-12">
-                    <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
                            Authors Listing
@@ -113,7 +105,7 @@ header('location:manage-authors.php');
                                         <tr>
                                             <th>#</th>
                                             <th>Author</th>
-                                         
+
                                             <th>Creation Date</th>
                                             <th>Updation Date</th>
                                             <th>Action</th>
@@ -128,7 +120,7 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>                                      
+{               ?>
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->AuthorName);?></td>
@@ -136,15 +128,15 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->UpdationDate);?></td>
                                             <td class="center">
 
-                                            <a href="edit-author.php?athrid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                            <a href="edit-author.php?athrid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
                                           <a href="manage-authors.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
                                             </td>
                                         </tr>
- <?php $cnt=$cnt+1;}} ?>                                      
+ <?php $cnt=$cnt+1;}} ?>
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!--End Advanced Tables -->
@@ -152,7 +144,7 @@ foreach($results as $result)
             </div>
 
 
-            
+
     </div>
     </div>
 

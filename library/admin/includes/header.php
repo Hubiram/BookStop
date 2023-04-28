@@ -8,7 +8,7 @@
                 </button>
                 <a class="navbar-brand">
 
-                    <img src="assets/img/logo.png" />
+                    <img src="assets/img/logo.png" height="70" width="200" />
                 </a>
 
             </div>
@@ -26,7 +26,7 @@
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a href="dashboard.php" class="menu-top-active">DASHBOARD</a></li>
-                           
+
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Categories <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
@@ -57,7 +57,7 @@
                                 </ul>
                             </li>
                              <li><a href="reg-students.php">Reg Students</a></li>
-                    
+
   <li><a href="change-password.php">Change Password</a></li>
                         </ul>
                     </div>

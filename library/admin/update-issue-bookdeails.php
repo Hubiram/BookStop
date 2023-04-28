@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['return']))
 {
@@ -37,17 +37,12 @@ header('location:manage-issued-books.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Issued Book Details</title>
-    <!-- BOOTSTRAP CORE STYLE  -->
+    <title>BookStop | Issued Book Details</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 <script>
-// function for get student name
 function getstudent() {
 $("#loaderIcon").show();
 jQuery.ajax({
@@ -62,7 +57,6 @@ error:function (){}
 });
 }
 
-//function for book details
 function getbook() {
 $("#loaderIcon").show();
 jQuery.ajax({
@@ -77,7 +71,7 @@ error:function (){}
 });
 }
 
-</script> 
+</script>
 <style type="text/css">
   .others{
     color:red;
@@ -88,15 +82,13 @@ error:function (){}
 
 </head>
 <body>
-      <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
-<!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Issued Book Details</h4>
-                
+
                             </div>
 
 </div>
@@ -108,7 +100,7 @@ Issued Book Details
 </div>
 <div class="panel-body">
 <form role="form" method="post">
-<?php 
+<?php
 $rid=intval($_GET['rid']);
 $sql = "SELECT tblstudents.StudentId ,tblstudents.FullName,tblstudents.EmailId,tblstudents.MobileNumber,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine,tblissuedbookdetails.RetrunStatus,tblbooks.id as bid,tblbooks.bookImage from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblissuedbookdetails.id=:rid";
 $query = $dbh -> prepare($sql);
@@ -119,32 +111,32 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>                                      
-                   
+{               ?>
+
 
 
 <input type="hidden" name="bookid" value="<?php echo htmlentities($result->bid);?>">
 <h4>Student Details</h4>
 <hr />
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Student ID :</label>
 <?php echo htmlentities($result->StudentId);?>
 </div></div>
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Student Name :</label>
 <?php echo htmlentities($result->FullName);?>
 </div></div>
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Student Email Id :</label>
 <?php echo htmlentities($result->EmailId);?>
 </div></div>
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Student Contact No :</label>
 <?php echo htmlentities($result->MobileNumber);?>
@@ -155,33 +147,33 @@ foreach($results as $result)
 <h4>Book Details</h4>
 <hr />
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Book Image :</label>
 <img src="bookimg/<?php echo htmlentities($result->bookImage); ?>" width="120">
 </div></div>
 
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Book Name :</label>
 <?php echo htmlentities($result->BookName);?>
 </div>
 </div>
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>ISBN :</label>
 <?php echo htmlentities($result->ISBNNumber);?>
 </div>
 </div>
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Book Issued Date :</label>
 <?php echo htmlentities($result->IssuesDate);?>
 </div></div>
 
-<div class="col-md-6"> 
+<div class="col-md-6">
 <div class="form-group">
 <label>Book Returned Date :</label>
 <?php if($result->ReturnDate=="")
@@ -196,10 +188,10 @@ foreach($results as $result)
 </div>
 </div>
 
-<div class="col-md-12"> 
+<div class="col-md-12">
 <div class="form-group">
 <label>Fine (in USD) :</label>
-<?php 
+<?php
 if($result->fine=="")
 {?>
 <input class="form-control" type="text" name="fine" id="fine"  required />
@@ -223,18 +215,12 @@ echo htmlentities($result->fine);
                             </div>
 
         </div>
-   
+
     </div>
     </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php');?>
-      <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
     <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
-      <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
 
 </body>

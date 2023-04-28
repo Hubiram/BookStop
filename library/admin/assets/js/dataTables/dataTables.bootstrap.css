@@ -78,8 +78,6 @@ table.dataTable th:active {
     outline: none;
 }
 
-/* Scrolling */
-
 div.dataTables_scrollHead table {
     margin-bottom: 0 !important;
     border-bottom-left-radius: 0;
@@ -107,10 +105,6 @@ div.dataTables_scrollFoot table {
     margin-top: 0 !important;
     border-top: none;
 }
-
-/*
- * TableTools styles
- */
 
 .table tbody tr.active td,
 .table tbody tr.active th {
@@ -150,7 +144,7 @@ ul.DTTT_dropdown.dropdown-menu {
 }
 
 ul.DTTT_dropdown.dropdown-menu a {
-    color: #333 !important; /* needed only when demo_page.css is included */
+    color: #333 !important;
 }
 
 ul.DTTT_dropdown.dropdown-menu li {
@@ -165,8 +159,6 @@ ul.DTTT_dropdown.dropdown-menu li:hover a {
 div.DTTT_collection_background {
     z-index: 2002;
 }
-
-/* TableTools information display */
 
 div.DTTT_print_info.modal {
     height: 150px;
@@ -185,10 +177,6 @@ div.DTTT_print_info p {
     font-size: 14px;
     line-height: 20px;
 }
-
-/*
- * FixedColumns styles
- */
 
 div.DTFC_LeftHeadWrapper table,
 div.DTFC_LeftFootWrapper table,

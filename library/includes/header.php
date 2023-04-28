@@ -8,23 +8,22 @@
                 </button>
                 <a class="navbar-brand" >
 
-                    <img src="assets/img/logo.png" />
+                    <img src="assets/img/logo.png" height="70" width="200" />
                 </a>
 
             </div>
 <?php if($_SESSION['login'])
 {
-?> 
+?>
             <div class="right-div">
                 <a href="logout.php" class="btn btn-danger pull-right">LOG ME OUT</a>
             </div>
             <?php }?>
         </div>
     </div>
-    <!-- LOGO HEADER END-->
 <?php if($_SESSION['login'])
 {
-?>    
+?>
 <section class="menu-section">
         <div class="container">
             <div class="row ">
@@ -54,12 +53,11 @@
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <ul id="menu-top" class="nav navbar-nav navbar-right">                        
-                          
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+
       <li><a href="index.php">Home</a></li>
-      <li><a href="index.php#ulogin">User Login</a></li>
                             <li><a href="signup.php">User Signup</a></li>
-                         
+
                             <li><a href="adminlogin.php">Admin Login</a></li>
 
                         </ul>
