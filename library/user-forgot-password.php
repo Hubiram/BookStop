@@ -35,7 +35,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Password Recovery </title>
+    <title>BookStop | Password Recovery </title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />

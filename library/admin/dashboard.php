@@ -37,7 +37,6 @@ else{?>
 <a href="manage-books.php">
  <div class="col-md-3 col-sm-3 col-xs-6">
  <div class="alert alert-success back-widget-set text-center">
- <i class="fa fa-book fa-5x"></i>
 <?php
 $sql ="SELECT id from tblbooks ";
 $query = $dbh -> prepare($sql);
@@ -54,7 +53,6 @@ Books Listed
              <a href="manage-issued-books.php">
                <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-warning back-widget-set text-center">
-                            <i class="fa fa-recycle fa-5x"></i>
 <?php
 $sql2 ="SELECT id from tblissuedbookdetails where (RetrunStatus='' || RetrunStatus is null)";
 $query2 = $dbh -> prepare($sql2);
@@ -72,7 +70,6 @@ $returnedbooks=$query2->rowCount();
   <a href="reg-students.php">
                <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-danger back-widget-set text-center">
-                            <i class="fa fa-users fa-5x"></i>
                             <?php
 $sql3 ="SELECT id from tblstudents ";
 $query3 = $dbh -> prepare($sql3);
@@ -89,7 +86,6 @@ $regstds=$query3->rowCount();
   <a href="manage-authors.php">
  <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-success back-widget-set text-center">
-                            <i class="fa fa-user fa-5x"></i>
 <?php
 $sq4 ="SELECT id from tblauthors ";
 $query4 = $dbh -> prepare($sq4);
@@ -112,7 +108,6 @@ Authors Listed
   <a href="manage-categories.php">
 <div class="col-md-3 col-sm-3 rscol-xs-6">
 <div class="alert alert-info back-widget-set text-center">
-<i class="fa fa-file-archive-o fa-5x"></i>
 <?php
 $sql5 ="SELECT id from tblcategory ";
 $query5 = $dbh -> prepare($sql5);
