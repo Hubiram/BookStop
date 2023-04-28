@@ -1,4 +1,10 @@
 # BookStop
 Library Website Project
 
-Bro still not done
+Admin Login:
+User-name: Kautham
+Password: Kautham
+
+User Login:
+User-name: Pavan
+Password: Pavan
