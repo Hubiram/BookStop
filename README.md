@@ -1,5 +1,5 @@
 # BookStop
-Library Website Project
+Library Website Project implemented in SQL and php
 
 Admin Login:  
 Username: Abhiram ||
