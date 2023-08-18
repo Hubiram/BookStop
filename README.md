@@ -2,9 +2,12 @@
 Library Website Project
 
 Admin Login:  
-User-name: Kautham ||
+Username: Abhiram ||
+Password: Abhiram ||   
+
+Username: Kautham ||
 Password: Kautham ||    
 
 User Login:   
-User-name: Pavan ||
+Username: Pavan ||
 Password: Pavan
